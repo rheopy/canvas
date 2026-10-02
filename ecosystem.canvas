@@ -1,0 +1,262 @@
+{
+  "nodes": [
+    {
+      "type": "text",
+      "x": -280,
+      "y": -460,
+      "width": 560,
+      "height": 250,
+      "color": "6",
+      "text": "# 🌊 rheopy\n\n**Open rheology, end to end.**\n\nOne ecosystem built around complete expert workflows — not disconnected tools. Every bundle pairs:\n\n- 📄 the science (papers, models)\n- 💾 curated data\n- 🔧 analysis tools\n- 📏 measurement protocols\n- 💻 zero-setup browser experience\n\n**measure → data → model → fit → explore**",
+      "id": "8fcf39b396f9ab96"
+    },
+    {
+      "type": "link",
+      "x": -820,
+      "y": -120,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/rheomeasurement",
+      "id": "55ceab90644db046"
+    },
+    {
+      "type": "link",
+      "x": -480,
+      "y": -120,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/rheodata",
+      "id": "203a0545133d3c8d"
+    },
+    {
+      "type": "link",
+      "x": -140,
+      "y": -120,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/rheomodel",
+      "id": "30695a1718da3599"
+    },
+    {
+      "type": "link",
+      "x": 200,
+      "y": -120,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/rheofit",
+      "id": "160350f18c4e29a2"
+    },
+    {
+      "type": "link",
+      "x": 540,
+      "y": -120,
+      "width": 280,
+      "height": 140,
+      "url": "https://rheopy.github.io/rheolite/",
+      "id": "0eca0a154bb0c1af"
+    },
+    {
+      "type": "link",
+      "x": -480,
+      "y": 80,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/capillary-breakup",
+      "id": "5769e094b6d13862"
+    },
+    {
+      "type": "link",
+      "x": -140,
+      "y": 80,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy/rheoflow",
+      "id": "18eec106e7f7eecc"
+    },
+    {
+      "type": "link",
+      "x": 200,
+      "y": 80,
+      "width": 280,
+      "height": 140,
+      "url": "https://github.com/rheopy",
+      "id": "21c7554fe8bcc665"
+    },
+    {
+      "type": "group",
+      "x": 1000,
+      "y": -500,
+      "width": 920,
+      "height": 1400,
+      "label": "📦 Bundles — complete workflows",
+      "id": "0a635ae367f18d3a"
+    },
+    {
+      "type": "text",
+      "x": 1060,
+      "y": -440,
+      "width": 800,
+      "height": 200,
+      "text": "## 📈 Flow curves\n\n**rheomodel** (9 models, verified citations) + **rheofit** (nonlinear regression engine) + **rheodata** (14 curated datasets) + **rheolite** walkthrough notebooks.\n\nFit a flow curve in the browser — Herschel–Bulkley vs TC vs Carreau, zero setup.",
+      "id": "c58c1eb91ff7459c"
+    },
+    {
+      "type": "text",
+      "x": 1060,
+      "y": -200,
+      "width": 800,
+      "height": 200,
+      "text": "## 💧 CaBER / extensional\n\n**capillary-breakup** (`pip install rheopy-caber`): video → filament thinning → viscosity via the Papageorgiou solution.\n\nThe **rheolite** CaBER quickstart runs it in the browser — and the test clip plays right here →",
+      "id": "319598a5a56ccaa9"
+    },
+    {
+      "type": "file",
+      "x": 1060,
+      "y": 40,
+      "width": 560,
+      "height": 315,
+      "file": "assets/test_clip.mp4",
+      "id": "c358c866ecf44133"
+    },
+    {
+      "type": "text",
+      "x": 1060,
+      "y": 395,
+      "width": 800,
+      "height": 180,
+      "text": "## 🌀 Oscillatory rheology\n\n**rheodata** ships amplitude + frequency sweeps; the Cox–Merz and Delaware–Rutgers rules bridge oscillatory → steady shear.",
+      "id": "ce43e39d7d350da1"
+    },
+    {
+      "type": "text",
+      "x": 1060,
+      "y": 615,
+      "width": 800,
+      "height": 200,
+      "text": "## 🔩 Engineering flows\n\n**rheoflow**: pipe, slit & annulus calculators — take a fitted model straight to pressure drop and flow rate.",
+      "id": "32ab0ca638510aa6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "6283a1e4f611a7de",
+      "fromNode": "55ceab90644db046",
+      "toNode": "203a0545133d3c8d",
+      "fromSide": "right",
+      "toSide": "left",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "measure"
+    },
+    {
+      "id": "0cb3618626b31741",
+      "fromNode": "203a0545133d3c8d",
+      "toNode": "30695a1718da3599",
+      "fromSide": "right",
+      "toSide": "left",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "data"
+    },
+    {
+      "id": "9d8d351477e9dc2b",
+      "fromNode": "30695a1718da3599",
+      "toNode": "160350f18c4e29a2",
+      "fromSide": "right",
+      "toSide": "left",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "model"
+    },
+    {
+      "id": "f117996d10e3359f",
+      "fromNode": "160350f18c4e29a2",
+      "toNode": "0eca0a154bb0c1af",
+      "fromSide": "right",
+      "toSide": "left",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "fit"
+    },
+    {
+      "id": "d29758a81306428b",
+      "fromNode": "8fcf39b396f9ab96",
+      "toNode": "30695a1718da3599",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "the science"
+    },
+    {
+      "id": "73845a3c468c14c9",
+      "fromNode": "c58c1eb91ff7459c",
+      "toNode": "30695a1718da3599",
+      "fromSide": "left",
+      "toSide": "right",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "uses"
+    },
+    {
+      "id": "63ef8711c25f43b9",
+      "fromNode": "c58c1eb91ff7459c",
+      "toNode": "160350f18c4e29a2",
+      "fromSide": "left",
+      "toSide": "right",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "uses"
+    },
+    {
+      "id": "ee19582058a44bc9",
+      "fromNode": "319598a5a56ccaa9",
+      "toNode": "5769e094b6d13862",
+      "fromSide": "left",
+      "toSide": "right",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "powered by"
+    },
+    {
+      "id": "8479f5208ff9c9b4",
+      "fromNode": "319598a5a56ccaa9",
+      "toNode": "c358c866ecf44133",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "watch"
+    },
+    {
+      "id": "7abe81cdde28c88e",
+      "fromNode": "ce43e39d7d350da1",
+      "toNode": "203a0545133d3c8d",
+      "fromSide": "left",
+      "toSide": "right",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "uses"
+    },
+    {
+      "id": "b6bfb543dd6f9c85",
+      "fromNode": "32ab0ca638510aa6",
+      "toNode": "18eec106e7f7eecc",
+      "fromSide": "left",
+      "toSide": "right",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "powered by"
+    },
+    {
+      "id": "edd5ebf537910d3f",
+      "fromNode": "21c7554fe8bcc665",
+      "toNode": "8fcf39b396f9ab96",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "fromEnd": "none",
+      "toEnd": "arrow",
+      "label": "start here"
+    }
+  ]
+}
