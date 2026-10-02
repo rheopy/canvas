@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌊 rheopy ecosystem</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
+               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  #viewer { width: 100%; height: 100%; }
+  #brand {
+    position: fixed; top: 16px; left: 16px; z-index: 10;
+    background: rgba(255,255,255,.88); backdrop-filter: blur(6px);
+    border: 1px solid #e2e2e2; border-radius: 12px; padding: 10px 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08); max-width: 320px;
+  }
+  #brand h1 { margin: 0; font-size: 17px; font-weight: 700; }
+  #brand p  { margin: 4px 0 0; font-size: 12.5px; color: #555; }
+  #brand .row { display: flex; gap: 8px; margin-top: 8px; }
+  #brand button, #brand a.btn {
+    font-size: 12.5px; padding: 5px 10px; border-radius: 8px;
+    border: 1px solid #d5d5d5; background: #fff; cursor: pointer;
+    color: #222; text-decoration: none;
+  }
+  #brand button:hover, #brand a.btn:hover { background: #f4f4f4; }
+  body.dark #brand { background: rgba(30,30,34,.88); border-color: #3a3a3f; }
+  body.dark #brand h1 { color: #f0f0f0; }
+  body.dark #brand p { color: #aaa; }
+  body.dark #brand button, body.dark #brand a.btn {
+    background: #2a2a2e; border-color: #444; color: #eee;
+  }
+  body.dark #brand button:hover, body.dark #brand a.btn:hover { background: #35353b; }
+</style>
+</head>
+<body>
+<div id="brand">
+  <h1>🌊 rheopy ecosystem</h1>
+  <p>Open rheology, end to end — pan, zoom, click through.</p>
+  <div class="row">
+    <button id="themeBtn" title="Toggle light / dark">🌙 dark</button>
+    <a class="btn" href="https://github.com/rheopy/canvas" target="_blank" rel="noopener">⬢ repo</a>
+    <a class="btn" href="ecosystem.canvas" download>⤓ .canvas</a>
+  </div>
+</div>
+<div id="viewer"></div>
+<script type="module">
+import { JSONCanvasViewer, parser, fetchCanvas, Minimap, Controls }
+  from './viewer/chimp.js';
+
+const viewer = new JSONCanvasViewer(
+  {
+    container: document.getElementById('viewer'),
+    canvas: await fetchCanvas('ecosystem.canvas'),
+    parser,
+    // remap the canvas attachment to its served location
+    attachments: { 'assets/test_clip.mp4': 'assets/test_clip.mp4' },
+    theme: 'light',
+  },
+  [Minimap, Controls]
+);
+
+const btn = document.getElementById('themeBtn');
+btn.addEventListener('click', () => {
+  const next = viewer.options.theme === 'dark' ? 'light' : 'dark';
+  viewer.changeTheme(next);
+  document.body.classList.toggle('dark', next === 'dark');
+  btn.textContent = next === 'dark' ? '☀️ light' : '🌙 dark';
+});
+</script>
+</body>
+</html>
