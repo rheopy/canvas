@@ -1,262 +1,35 @@
 {
-  "nodes": [
-    {
-      "type": "text",
-      "x": -280,
-      "y": -460,
-      "width": 560,
-      "height": 250,
-      "color": "6",
-      "text": "# 🌊 rheopy\n\n**Open rheology, end to end.**\n\nOne ecosystem built around complete expert workflows — not disconnected tools. Every bundle pairs:\n\n- 📄 the science (papers, models)\n- 💾 curated data\n- 🔧 analysis tools\n- 📏 measurement protocols\n- 💻 zero-setup browser experience\n\n**measure → data → model → fit → explore**",
-      "id": "91a21a89411abda4"
-    },
-    {
-      "type": "text",
-      "x": -820,
-      "y": -160,
-      "width": 380,
-      "height": 320,
-      "text": "## 📏 rheomeasurement\n\ndocument and share measurment protocols\n\n*[protocols landing here]*\n\n[→ github.com/rheopy/rheomeasurement](https://github.com/rheopy/rheomeasurement)",
-      "id": "8395fd264a84a940"
-    },
-    {
-      "type": "text",
-      "x": -400,
-      "y": -160,
-      "width": 380,
-      "height": 320,
-      "text": "## 💾 rheodata 📊\n\n**Curated, quality-checked rheology datasets — for training, simulation, and benchmarking.**\n\n`pip install rheopy-rheodata` — every dataset carries provenance, measurement record, and citation.\n\n[→ github.com/rheopy/rheodata](https://github.com/rheopy/rheodata)",
-      "id": "be10a06272e8ab6a"
-    },
-    {
-      "type": "text",
-      "x": 20,
-      "y": -160,
-      "width": 380,
-      "height": 320,
-      "text": "## 🧪 rheomodel\n\nNine flow-curve models as pure Python functions — equations, parameters, bounds, and **verified academic citations**.\n\n`pip install rheopy-rheomodel`\n\n[→ github.com/rheopy/rheomodel](https://github.com/rheopy/rheomodel)",
-      "id": "f60cd2057a15980c"
-    },
-    {
-      "type": "text",
-      "x": 440,
-      "y": -160,
-      "width": 380,
-      "height": 320,
-      "text": "## ⚗️ rheofit\n\n**Turn flow curves into material physics** — yield stress, zero-shear viscosity, relaxation time, shear-thinning index.\n\n[📖 docs](https://rheofit.readthedocs.io/) · [→ github.com/rheopy/rheofit](https://github.com/rheopy/rheofit)",
-      "id": "104232b0588e4a08"
-    },
-    {
-      "type": "link",
-      "x": 20,
-      "y": 200,
-      "width": 800,
-      "height": 520,
-      "url": "https://rheopy.github.io/rheolite/",
-      "id": "92e5cdc3b0aac86d"
-    },
-    {
-      "type": "text",
-      "x": -820,
-      "y": 200,
-      "width": 380,
-      "height": 320,
-      "text": "## 💧 capillary-breakup\n\nVideo analysis for CaBER extensional rheometry: video in → filament neck vs time → viscosity via the Papageorgiou solution.\n\n`pip install rheopy-caber`\n\n[📖 docs](https://capillary-breakup.readthedocs.io/) · [→ repo](https://github.com/rheopy/capillary-breakup)",
-      "id": "7c21675210b2e3fe"
-    },
-    {
-      "type": "text",
-      "x": -400,
-      "y": 200,
-      "width": 380,
-      "height": 320,
-      "text": "## 🔩 rheoflow\n\nNon-Newtonian flow calculators — pipes, slits, annulus. Take a fitted model straight to pressure drop and flow rate.\n\n[📖 docs](https://rheoflow.readthedocs.io/) · [→ repo](https://github.com/rheopy/rheoflow)",
-      "id": "9544d826ea70e9c9"
-    },
-    {
-      "type": "text",
-      "x": -820,
-      "y": 560,
-      "width": 380,
-      "height": 280,
-      "text": "## ⚗️ rheopy org\n\n**Open rheology, end to end** — from curated measurements to guarded model fits to in-browser exploration.\n\n[→ github.com/rheopy](https://github.com/rheopy)",
-      "id": "49f7807245ebe929"
-    },
-    {
-      "type": "group",
-      "x": 1350,
-      "y": -500,
-      "width": 920,
-      "height": 1400,
-      "label": "📦 Bundles — complete workflows",
-      "id": "ee069ed92d23d088"
-    },
-    {
-      "type": "text",
-      "x": 1410,
-      "y": -440,
-      "width": 800,
-      "height": 200,
-      "text": "## 📈 Flow curves\n\n**rheomodel** (9 models, verified citations) + **rheofit** (nonlinear regression engine) + **rheodata** (14 curated datasets) + **rheolite** walkthrough notebooks.\n\nFit a flow curve in the browser — Herschel–Bulkley vs TC vs Carreau, zero setup.",
-      "id": "fc255778a43ed129"
-    },
-    {
-      "type": "text",
-      "x": 1410,
-      "y": -200,
-      "width": 800,
-      "height": 200,
-      "text": "## 💧 CaBER / extensional\n\n**capillary-breakup** (`pip install rheopy-caber`): video → filament thinning → viscosity via the Papageorgiou solution.\n\nThe **rheolite** CaBER quickstart runs it in the browser — and the test clip plays right here →",
-      "id": "4a281e92b71a73bf"
-    },
-    {
-      "type": "file",
-      "x": 1410,
-      "y": 40,
-      "width": 560,
-      "height": 315,
-      "file": "assets/test_clip.mp4",
-      "id": "165b2af09c47880d"
-    },
-    {
-      "type": "text",
-      "x": 1410,
-      "y": 395,
-      "width": 800,
-      "height": 180,
-      "text": "## 🌀 Oscillatory rheology\n\n**rheodata** ships amplitude + frequency sweeps; the Cox–Merz and Delaware–Rutgers rules bridge oscillatory → steady shear.",
-      "id": "e745dbd30343c584"
-    },
-    {
-      "type": "text",
-      "x": 1410,
-      "y": 615,
-      "width": 800,
-      "height": 200,
-      "text": "## 🔩 Engineering flows\n\n**rheoflow**: pipe, slit & annulus calculators — take a fitted model straight to pressure drop and flow rate.",
-      "id": "8fccb72d43d15545"
-    }
-  ],
-  "edges": [
-    {
-      "id": "59763932c79be43e",
-      "fromNode": "8395fd264a84a940",
-      "toNode": "be10a06272e8ab6a",
-      "fromSide": "right",
-      "toSide": "left",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "measure"
-    },
-    {
-      "id": "e2f7b00e63214dbd",
-      "fromNode": "be10a06272e8ab6a",
-      "toNode": "f60cd2057a15980c",
-      "fromSide": "right",
-      "toSide": "left",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "data"
-    },
-    {
-      "id": "299a2d13a066ddc7",
-      "fromNode": "f60cd2057a15980c",
-      "toNode": "104232b0588e4a08",
-      "fromSide": "right",
-      "toSide": "left",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "model"
-    },
-    {
-      "id": "22d70be7bdf5719f",
-      "fromNode": "91a21a89411abda4",
-      "toNode": "f60cd2057a15980c",
-      "fromSide": "bottom",
-      "toSide": "top",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "the science"
-    },
-    {
-      "id": "ddba979e99fcf71c",
-      "fromNode": "104232b0588e4a08",
-      "toNode": "92e5cdc3b0aac86d",
-      "fromSide": "bottom",
-      "toSide": "top",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "explore"
-    },
-    {
-      "id": "f8cbfbf7d4a3e71a",
-      "fromNode": "49f7807245ebe929",
-      "toNode": "91a21a89411abda4",
-      "fromSide": "top",
-      "toSide": "bottom",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "start here"
-    },
-    {
-      "id": "6711687a16c4cd60",
-      "fromNode": "fc255778a43ed129",
-      "toNode": "f60cd2057a15980c",
-      "fromSide": "left",
-      "toSide": "right",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "uses"
-    },
-    {
-      "id": "37b31c9ea5ff6195",
-      "fromNode": "fc255778a43ed129",
-      "toNode": "104232b0588e4a08",
-      "fromSide": "left",
-      "toSide": "right",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "uses"
-    },
-    {
-      "id": "c471e6fae771a4ce",
-      "fromNode": "4a281e92b71a73bf",
-      "toNode": "7c21675210b2e3fe",
-      "fromSide": "left",
-      "toSide": "right",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "powered by"
-    },
-    {
-      "id": "1a972feebe00bb30",
-      "fromNode": "4a281e92b71a73bf",
-      "toNode": "165b2af09c47880d",
-      "fromSide": "bottom",
-      "toSide": "top",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "watch"
-    },
-    {
-      "id": "166e529b6d11a064",
-      "fromNode": "e745dbd30343c584",
-      "toNode": "be10a06272e8ab6a",
-      "fromSide": "left",
-      "toSide": "right",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "uses"
-    },
-    {
-      "id": "2d47597d84047aeb",
-      "fromNode": "8fccb72d43d15545",
-      "toNode": "9544d826ea70e9c9",
-      "fromSide": "left",
-      "toSide": "right",
-      "fromEnd": "none",
-      "toEnd": "arrow",
-      "label": "powered by"
-    }
-  ]
+	"nodes":[
+		{"type":"group","id":"ee069ed92d23d088","x":1350,"y":-500,"width":920,"height":1400,"label":"📦 Bundles — complete workflows"},
+		{"type":"text","text":"## 🔩 rheoflow\n\nNon-Newtonian flow calculators — pipes, slits, annulus. Take a fitted model straight to pressure drop and flow rate.\n\n[📖 docs](https://rheoflow.readthedocs.io/) · [→ repo](https://github.com/rheopy/rheoflow)","id":"9544d826ea70e9c9","x":-400,"y":200,"width":380,"height":320},
+		{"type":"text","text":"## 📈 Flow curves\n\n**rheomodel** (9 models, verified citations) + **rheofit** (nonlinear regression engine) + **rheodata** (14 curated datasets) + **rheolite** walkthrough notebooks.\n\nFit a flow curve in the browser — Herschel–Bulkley vs TC vs Carreau, zero setup.","id":"fc255778a43ed129","x":1410,"y":-440,"width":800,"height":200},
+		{"type":"text","text":"## 💧 CaBER / extensional\n\n**capillary-breakup** (`pip install rheopy-caber`): video → filament thinning → viscosity via the Papageorgiou solution.\n\nThe **rheolite** CaBER quickstart runs it in the browser — and the test clip plays right here →","id":"4a281e92b71a73bf","x":1410,"y":-200,"width":800,"height":200},
+		{"type":"file","file":"assets/test_clip.mp4","id":"165b2af09c47880d","x":1410,"y":40,"width":800,"height":583},
+		{"type":"text","text":"## 🔩 Engineering flows\n\n**rheoflow**: pipe, slit & annulus calculators — take a fitted model straight to pressure drop and flow rate.","id":"8fccb72d43d15545","x":1410,"y":615,"width":800,"height":200},
+		{"type":"link","url":"https://rheopy.github.io/rheolite/","id":"92e5cdc3b0aac86d","x":-1400,"y":715,"width":2600,"height":1365},
+		{"type":"text","text":"## 💧 capillary-breakup\n\nVideo analysis for CaBER extensional rheometry: video in → filament neck vs time → viscosity via the Papageorgiou solution.\n\n`pip install rheopy-caber`\n\n[📖 docs](https://capillary-breakup.readthedocs.io/) · [→ repo](https://github.com/rheopy/capillary-breakup)","id":"7c21675210b2e3fe","x":-1400,"y":255,"width":380,"height":320},
+		{"type":"text","text":"## 💾 rheodata 📊\n\n**Curated, quality-checked rheology datasets — for training, simulation, and benchmarking.**\n\n`pip install rheopy-rheodata` — every dataset carries provenance, measurement record, and citation.\n\n[→ github.com/rheopy/rheodata](https://github.com/rheopy/rheodata)","id":"be10a06272e8ab6a","x":-820,"y":-122,"width":380,"height":320},
+		{"type":"text","text":"## 📏 rheomeasurement\n\ndocument and share measurment protocols\n\n*[protocols landing here]*\n\n[→ github.com/rheopy/rheomeasurement](https://github.com/rheopy/rheomeasurement)","id":"8395fd264a84a940","x":-1440,"y":-442,"width":380,"height":320},
+		{"type":"text","text":"# 🌊 rheopy\n\n**Open rheology, end to end.**\n\nOne ecosystem built around complete expert workflows — not disconnected tools. Every bundle pairs:\n\n- 📄 the science (papers, models)\n- 💾 curated data\n- 🔧 analysis tools\n- 📏 measurement protocols\n- 💻 zero-setup browser experience\n\n**measure → data → model → fit → explore**","id":"91a21a89411abda4","x":-20,"y":-1040,"width":560,"height":250,"color":"6"},
+		{"type":"text","text":"## ⚗️ rheopy org\n\n**Open rheology, end to end** — from curated measurements to guarded model fits to in-browser exploration.\n\n[→ github.com/rheopy](https://github.com/rheopy)","id":"49f7807245ebe929","x":-820,"y":-722,"width":380,"height":280},
+		{"type":"text","text":"## 🧪 rheomodel\n\nNine flow-curve models as pure Python functions — equations, parameters, bounds, and **verified academic citations**.\n\n`pip install rheopy-rheomodel`\n\n[→ github.com/rheopy/rheomodel](https://github.com/rheopy/rheomodel)","id":"f60cd2057a15980c","x":-210,"y":-340,"width":380,"height":320},
+		{"type":"text","text":"## ⚗️ rheofit\n\n**Turn flow curves into material physics** — yield stress, zero-shear viscosity, relaxation time, shear-thinning index.\n\n[📖 docs](https://rheofit.readthedocs.io/) · [→ github.com/rheopy/rheofit](https://github.com/rheopy/rheofit)","id":"104232b0588e4a08","x":720,"y":-722,"width":380,"height":320},
+		{"id":"18cfe6052cb9f811","x":940,"y":-2060,"width":980,"height":1220,"type":"link","url":"https://rheofit.readthedocs.io/en/latest/"},
+		{"id":"9b2f7b2a6819ee8b","x":-860,"y":-2540,"width":1480,"height":1320,"type":"link","url":"https://rheopy.github.io/rheofit/"}
+	],
+	"edges":[
+		{"id":"59763932c79be43e","fromNode":"8395fd264a84a940","fromSide":"right","toNode":"be10a06272e8ab6a","toSide":"left","label":"measure"},
+		{"id":"e2f7b00e63214dbd","fromNode":"be10a06272e8ab6a","fromSide":"right","toNode":"f60cd2057a15980c","toSide":"left","label":"data"},
+		{"id":"299a2d13a066ddc7","fromNode":"f60cd2057a15980c","fromSide":"right","toNode":"104232b0588e4a08","toSide":"left","label":"The Math"},
+		{"id":"22d70be7bdf5719f","fromNode":"91a21a89411abda4","fromSide":"bottom","toNode":"f60cd2057a15980c","toSide":"top","label":"the science"},
+		{"id":"ddba979e99fcf71c","fromNode":"104232b0588e4a08","fromSide":"bottom","toNode":"92e5cdc3b0aac86d","toSide":"top","label":"explore"},
+		{"id":"f8cbfbf7d4a3e71a","fromNode":"49f7807245ebe929","fromSide":"top","toNode":"91a21a89411abda4","toSide":"bottom","label":"start here"},
+		{"id":"37b31c9ea5ff6195","fromNode":"fc255778a43ed129","fromSide":"left","toNode":"104232b0588e4a08","toSide":"right","label":"uses"},
+		{"id":"c471e6fae771a4ce","fromNode":"4a281e92b71a73bf","fromSide":"left","toNode":"7c21675210b2e3fe","toSide":"right","label":"powered by"},
+		{"id":"1a972feebe00bb30","fromNode":"4a281e92b71a73bf","fromSide":"bottom","toNode":"165b2af09c47880d","toSide":"top","label":"watch"},
+		{"id":"2d47597d84047aeb","fromNode":"8fccb72d43d15545","fromSide":"left","toNode":"9544d826ea70e9c9","toSide":"right","label":"powered by"},
+		{"id":"f210c531fe4b97f6","fromNode":"49f7807245ebe929","fromSide":"left","toNode":"8395fd264a84a940","toSide":"top"},
+		{"id":"565ccac1a7741c5d","fromNode":"104232b0588e4a08","fromSide":"top","toNode":"18cfe6052cb9f811","toSide":"bottom"},
+		{"id":"e4236b6953519f43","fromNode":"18cfe6052cb9f811","fromSide":"left","toNode":"9b2f7b2a6819ee8b","toSide":"right"}
+	]
 }
