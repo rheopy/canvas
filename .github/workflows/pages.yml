@@ -15,17 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Validate the canvas JSON
-        run: python3 -c "
+        run: |
+          python3 - << 'PY'
           import json
           c = json.load(open('ecosystem.canvas'))
           ids = {n['id'] for n in c['nodes']}
           assert len(ids) == len(c['nodes']), 'duplicate node id'
           for n in c['nodes']:
-              assert {'id','type','x','y','width','height'} <= set(n), n.get('id')
+              assert {'id', 'type', 'x', 'y', 'width', 'height'} <= set(n), n.get('id')
           for e in c['edges']:
               assert e['fromNode'] in ids and e['toNode'] in ids, e.get('id')
-          print(f\"canvas OK: {len(c['nodes'])} nodes, {len(c['edges'])} edges\")
-          "
+          print(f"canvas OK: {len(c['nodes'])} nodes, {len(c['edges'])} edges")
+          PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
