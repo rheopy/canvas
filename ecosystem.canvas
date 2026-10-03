@@ -1,35 +1,23 @@
 {
 	"nodes":[
-		{"type":"group","id":"ee069ed92d23d088","x":1350,"y":-500,"width":920,"height":1400,"label":"📦 Bundles — complete workflows"},
-		{"type":"text","text":"## 🔩 rheoflow\n\nNon-Newtonian flow calculators — pipes, slits, annulus. Take a fitted model straight to pressure drop and flow rate.\n\n[📖 docs](https://rheoflow.readthedocs.io/) · [→ repo](https://github.com/rheopy/rheoflow)","id":"9544d826ea70e9c9","x":-400,"y":200,"width":380,"height":320},
-		{"type":"text","text":"## 📈 Flow curves\n\n**rheomodel** (9 models, verified citations) + **rheofit** (nonlinear regression engine) + **rheodata** (14 curated datasets) + **rheolite** walkthrough notebooks.\n\nFit a flow curve in the browser — Herschel–Bulkley vs TC vs Carreau, zero setup.","id":"fc255778a43ed129","x":1410,"y":-440,"width":800,"height":200},
-		{"type":"text","text":"## 💧 CaBER / extensional\n\n**capillary-breakup** (`pip install rheopy-caber`): video → filament thinning → viscosity via the Papageorgiou solution.\n\nThe **rheolite** CaBER quickstart runs it in the browser — and the test clip plays right here →","id":"4a281e92b71a73bf","x":1410,"y":-200,"width":800,"height":200},
-		{"type":"file","file":"assets/test_clip.mp4","id":"165b2af09c47880d","x":1410,"y":40,"width":800,"height":583},
-		{"type":"text","text":"## 🔩 Engineering flows\n\n**rheoflow**: pipe, slit & annulus calculators — take a fitted model straight to pressure drop and flow rate.","id":"8fccb72d43d15545","x":1410,"y":615,"width":800,"height":200},
-		{"type":"link","url":"https://rheopy.github.io/rheolite/","id":"92e5cdc3b0aac86d","x":-1400,"y":715,"width":2600,"height":1365},
-		{"type":"text","text":"## 💧 capillary-breakup\n\nVideo analysis for CaBER extensional rheometry: video in → filament neck vs time → viscosity via the Papageorgiou solution.\n\n`pip install rheopy-caber`\n\n[📖 docs](https://capillary-breakup.readthedocs.io/) · [→ repo](https://github.com/rheopy/capillary-breakup)","id":"7c21675210b2e3fe","x":-1400,"y":255,"width":380,"height":320},
-		{"type":"text","text":"## 💾 rheodata 📊\n\n**Curated, quality-checked rheology datasets — for training, simulation, and benchmarking.**\n\n`pip install rheopy-rheodata` — every dataset carries provenance, measurement record, and citation.\n\n[→ github.com/rheopy/rheodata](https://github.com/rheopy/rheodata)","id":"be10a06272e8ab6a","x":-820,"y":-122,"width":380,"height":320},
-		{"type":"text","text":"## 📏 rheomeasurement\n\ndocument and share measurment protocols\n\n*[protocols landing here]*\n\n[→ github.com/rheopy/rheomeasurement](https://github.com/rheopy/rheomeasurement)","id":"8395fd264a84a940","x":-1440,"y":-442,"width":380,"height":320},
-		{"type":"text","text":"# 🌊 rheopy\n\n**Open rheology, end to end.**\n\nOne ecosystem built around complete expert workflows — not disconnected tools. Every bundle pairs:\n\n- 📄 the science (papers, models)\n- 💾 curated data\n- 🔧 analysis tools\n- 📏 measurement protocols\n- 💻 zero-setup browser experience\n\n**measure → data → model → fit → explore**","id":"91a21a89411abda4","x":-20,"y":-1040,"width":560,"height":250,"color":"6"},
-		{"type":"text","text":"## ⚗️ rheopy org\n\n**Open rheology, end to end** — from curated measurements to guarded model fits to in-browser exploration.\n\n[→ github.com/rheopy](https://github.com/rheopy)","id":"49f7807245ebe929","x":-820,"y":-722,"width":380,"height":280},
-		{"type":"text","text":"## 🧪 rheomodel\n\nNine flow-curve models as pure Python functions — equations, parameters, bounds, and **verified academic citations**.\n\n`pip install rheopy-rheomodel`\n\n[→ github.com/rheopy/rheomodel](https://github.com/rheopy/rheomodel)","id":"f60cd2057a15980c","x":-210,"y":-340,"width":380,"height":320},
-		{"type":"text","text":"## ⚗️ rheofit\n\n**Turn flow curves into material physics** — yield stress, zero-shear viscosity, relaxation time, shear-thinning index.\n\n[📖 docs](https://rheofit.readthedocs.io/) · [→ github.com/rheopy/rheofit](https://github.com/rheopy/rheofit)","id":"104232b0588e4a08","x":720,"y":-722,"width":380,"height":320},
-		{"id":"18cfe6052cb9f811","x":940,"y":-2060,"width":980,"height":1220,"type":"link","url":"https://rheofit.readthedocs.io/en/latest/"},
-		{"id":"9b2f7b2a6819ee8b","x":-860,"y":-2540,"width":1480,"height":1320,"type":"link","url":"https://rheopy.github.io/rheofit/"}
+		{"id":"891dcb4a94ef38dd","x":-1760,"y":-5360,"width":4080,"height":4080,"color":"3","type":"group","label":"Rheofit repository"},
+		{"id":"2b5bbca355da81f9","x":-5334,"y":-3413,"width":3454,"height":2133,"color":"6","type":"group","label":"Rheolite"},
+		{"id":"2daf19c900489949","x":-4240,"y":-5360,"width":1600,"height":1680,"color":"1","type":"group","label":"Github Organization"},
+		{"id":"c439f798be845147","x":-1200,"y":-3680,"width":760,"height":2080,"type":"link","url":"https://github.com/rheopy/rheofit"},
+		{"id":"665f2b1571983f2d","x":-1520,"y":-5000,"width":920,"height":1000,"type":"link","url":"https://pypi.org/project/rheofit/"},
+		{"id":"18cfe6052cb9f811","type":"link","url":"https://rheofit.readthedocs.io/en/latest/","x":640,"y":-5110,"width":1480,"height":1220},
+		{"id":"9b2f7b2a6819ee8b","type":"link","url":"https://rheopy.github.io/rheofit/","x":640,"y":-3680,"width":1480,"height":1440},
+		{"id":"a54856f99ed32dfc","type":"file","file":"rheopy_logo.png","x":-4160,"y":-5240,"width":400,"height":400},
+		{"id":"efb734832cdba521","x":-3640,"y":-5240,"width":855,"height":1360,"type":"link","url":"https://github.com/rheopy"},
+		{"id":"bdecbe6ac17d7fdf","x":-5058,"y":-2800,"width":1098,"height":1120,"type":"link","url":"https://github.com/rheopy/rheolite"},
+		{"type":"link","url":"https://rheopy.github.io/rheolite/","id":"92e5cdc3b0aac86d","x":-3640,"y":-3200,"width":1620,"height":1120,"color":"4"}
 	],
 	"edges":[
-		{"id":"59763932c79be43e","fromNode":"8395fd264a84a940","fromSide":"right","toNode":"be10a06272e8ab6a","toSide":"left","label":"measure"},
-		{"id":"e2f7b00e63214dbd","fromNode":"be10a06272e8ab6a","fromSide":"right","toNode":"f60cd2057a15980c","toSide":"left","label":"data"},
-		{"id":"299a2d13a066ddc7","fromNode":"f60cd2057a15980c","fromSide":"right","toNode":"104232b0588e4a08","toSide":"left","label":"The Math"},
-		{"id":"22d70be7bdf5719f","fromNode":"91a21a89411abda4","fromSide":"bottom","toNode":"f60cd2057a15980c","toSide":"top","label":"the science"},
-		{"id":"ddba979e99fcf71c","fromNode":"104232b0588e4a08","fromSide":"bottom","toNode":"92e5cdc3b0aac86d","toSide":"top","label":"explore"},
-		{"id":"f8cbfbf7d4a3e71a","fromNode":"49f7807245ebe929","fromSide":"top","toNode":"91a21a89411abda4","toSide":"bottom","label":"start here"},
-		{"id":"37b31c9ea5ff6195","fromNode":"fc255778a43ed129","fromSide":"left","toNode":"104232b0588e4a08","toSide":"right","label":"uses"},
-		{"id":"c471e6fae771a4ce","fromNode":"4a281e92b71a73bf","fromSide":"left","toNode":"7c21675210b2e3fe","toSide":"right","label":"powered by"},
-		{"id":"1a972feebe00bb30","fromNode":"4a281e92b71a73bf","fromSide":"bottom","toNode":"165b2af09c47880d","toSide":"top","label":"watch"},
-		{"id":"2d47597d84047aeb","fromNode":"8fccb72d43d15545","fromSide":"left","toNode":"9544d826ea70e9c9","toSide":"right","label":"powered by"},
-		{"id":"f210c531fe4b97f6","fromNode":"49f7807245ebe929","fromSide":"left","toNode":"8395fd264a84a940","toSide":"top"},
-		{"id":"565ccac1a7741c5d","fromNode":"104232b0588e4a08","fromSide":"top","toNode":"18cfe6052cb9f811","toSide":"bottom"},
-		{"id":"e4236b6953519f43","fromNode":"18cfe6052cb9f811","fromSide":"left","toNode":"9b2f7b2a6819ee8b","toSide":"right"}
+		{"id":"5529cc775450bb01","fromNode":"2daf19c900489949","fromSide":"right","toNode":"c439f798be845147","toSide":"left","label":"Rheofit repository"},
+		{"id":"470e1ecdf66b9f48","fromNode":"c439f798be845147","fromSide":"top","toNode":"665f2b1571983f2d","toSide":"bottom","label":"Pip Installable Python Library"},
+		{"id":"2f9eb4321bbe67da","fromNode":"c439f798be845147","fromSide":"top","toNode":"18cfe6052cb9f811","toSide":"left","label":"Structured Documenttion"},
+		{"id":"c3c31c0db3cc5a3a","fromNode":"c439f798be845147","fromSide":"right","toNode":"9b2f7b2a6819ee8b","toSide":"left","label":"Interactive Marimo app"},
+		{"id":"3117fa5eca5f9f9d","fromNode":"bdecbe6ac17d7fdf","fromSide":"bottom","toNode":"92e5cdc3b0aac86d","toSide":"left"},
+		{"id":"6957d7eea1febe32","fromNode":"665f2b1571983f2d","fromSide":"left","toNode":"92e5cdc3b0aac86d","toSide":"top","fromEnd":"arrow","label":"micropip install rheofit in the pyodide kernel"}
 	]
 }
