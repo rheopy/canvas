@@ -15,6 +15,7 @@ the browser with the open-source
 | `index.html` | The GitHub Pages site embedding the viewer |
 | `viewer/chimp.js` | The viewer, vendored from `json-canvas-viewer@4.3.2` (npm) — no CDN needed |
 | `assets/test_clip.mp4` | CaBER test clip, played inline as a video node |
+| `assets/snapshots/*.png` | Page snapshots backing the clickable preview nodes |
 
 ## The map
 
