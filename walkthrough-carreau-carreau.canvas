@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "66eb326f9962c07f",
+      "x": -460,
+      "y": 0,
+      "width": 920,
+      "height": 400,
+      "type": "text",
+      "text": "# 🧭 Two microstructures, two relaxation times\n\n**`carreau_carreau` on a wormlike-micelle + polymer system** — a rheofit case study.\n\nWhen a formulation mixes microstructures, the model should too. A temperature-series\nstory of why one Carreau mode fails on a mixed WLM/polymer surfactant system — and\nhow the microstructure-informed sum succeeds, with parameters that track temperature\nlike they mean it.\n\n📖 [Full walkthrough](https://rheofit.readthedocs.io/en/latest/walkthrough-carreau-carreau.html) · 📦 [rheofit](https://github.com/rheopy/rheofit) · 🗃️ [rheodata](https://github.com/rheopy/rheodata)",
+      "color": "6"
+    },
+    {
+      "id": "77bc9a5c2f579562",
+      "x": -460,
+      "y": 470,
+      "width": 920,
+      "height": 380,
+      "type": "text",
+      "text": "## 🧪 The dataset\n\n`caggioni_wlm_polymer_temp_series` from **rheodata** — equilibrium flow curves of a\nmixed surfactant system: **wormlike micelles (WLM) + a polymer solution**.\n\n- 7 sweeps: **18, 20, 22, 24, 26, 28 °C — plus a repeat at 18 °C**\n- 41 points each, 0.01 → 100 1/s\n- the curves carry **at least two distinct relaxation times** — that is exactly what makes them interesting\n\n```python\ndf18 = rheodata.to_rheofit(\"caggioni_wlm_polymer_temp_series\", \"T_18\")\nres = rheofit.fit(df18, \"carreau_carreau\", effort=\"thorough\", seed=0)\n```"
+    },
+    {
+      "id": "a4cef2394e8d91d5",
+      "x": -460,
+      "y": 920,
+      "width": 920,
+      "height": 640,
+      "type": "text",
+      "text": "## 🤔 The modeling assumption\n\nDecouple the WLM contribution from the polymer contribution — one Carreau mode each,\nwith **fixed** exponents:\n\n- **WLM → stress plateau** at high shear → Carreau with **n = 0**\n- **polymer → shear-thinning**, no plateau → Carreau with **n = 0.5**\n\n`σ = η₀,₁·γ̇·[1+(λ₁·γ̇)²]^(−¼) + η₀,₂·γ̇·[1+(λ₂·γ̇)²]^(−½)`\n\n![WLM and polymer modes feeding the carreau–carreau model](assets/walkthrough/walkthrough_cc_mermaid.svg)"
+    },
+    {
+      "id": "bd65897c277b9e3e",
+      "x": -460,
+      "y": 1630,
+      "width": 920,
+      "height": 1020,
+      "type": "text",
+      "text": "## 📉 One Carreau is not enough — 18 °C\n\nA single Carreau does its honest best: **η₀ = 15.2 Pa·s, λ = 1.50 s, n = 0.61** —\na compromise exponent stuck halfway between the plateau mode (n = 0) and the polymer\nmode (n = 0.5).\n\nReduced χ² = **1.29e-2**, and the residuals trace a systematic S-shape: the model\ncannot bend twice.\n\n![Single Carreau vs carreau–carreau at 18 °C, with relative residuals](assets/walkthrough/fig5_cc_vs_carreau_18C.png)",
+      "color": "1"
+    },
+    {
+      "id": "c6ef6c83778dfe6f",
+      "x": -460,
+      "y": 2720,
+      "width": 920,
+      "height": 1040,
+      "type": "text",
+      "text": "## ✅ `carreau_carreau` at 18 °C\n\n| parameter | value | ± stderr |\n|---|---|---|\n| η₀,₁ (polymer) | 11.01 Pa·s | 1.7% |\n| λ₁ (polymer) | 3.97 s | 6.7% |\n| η₀,₂ (WLM) | 5.08 Pa·s | 2.9% |\n| λ₂ (WLM) | 0.0454 s | 3.0% |\n\nReduced χ² = **8.28e-4** — about **15× better** than one Carreau — condition number\n11.6: every parameter identified, no degeneracy. The two relaxation times sit ~90×\napart, exactly the separation the data demanded.\n\n![Decomposition into polymer and WLM terms, with viscosity on a twin axis](assets/walkthrough/fig4_cc_decomposition_18C.png)\n\nA slow polymer mode (λ ≈ 4 s) carries the low-shear viscosity; a fast WLM mode\n(λ ≈ 0.05 s) flattens into its stress plateau (σ → η₀,₂/λ₂ ≈ 112 Pa) at high shear.",
+      "color": "4"
+    },
+    {
+      "id": "1cfb63e5bde7a433",
+      "x": -460,
+      "y": 3830,
+      "width": 920,
+      "height": 1180,
+      "type": "text",
+      "text": "## 🌡️ Across temperatures: the parameters behave\n\n| T / °C | η₀,₁ / Pa·s | λ₁ / s | η₀,₂ / Pa·s | λ₂ / s | Red. χ² (cc) | Red. χ² (1× C.) |\n|---|---|---|---|---|---|---|\n| 18 | 11.01 | 3.97 | 5.08 | 0.0454 | 8.3e-4 | 1.29e-2 |\n| 20 | 9.05 | 3.17 | 3.84 | 0.0316 | 9.8e-4 | 8.2e-3 |\n| 22 | 7.54 | 2.37 | 2.78 | 0.0210 | 1.0e-3 | 2.9e-3 |\n| 24 | 6.29 | 2.07 | 2.17 | 0.0166 | 1.3e-3 | 1.5e-3 |\n| 26 | 5.09 | 1.64 | 1.71 | 0.0136 | 1.0e-3 | 6.8e-4 |\n| 28 | 4.16 | 1.33 | 1.37 | 0.0116 | 8.1e-4 | 3.3e-4 |\n| 18 ↺ | 10.49 | 3.33 | 4.60 | 0.0405 | 9.6e-4 | 1.0e-2 |\n\n![Carreau–Carreau parameters vs temperature](assets/walkthrough/fig6_cc_params_vs_T.png)\n\nBoth relaxation times shorten and both viscosities fall with temperature — clean\nthermal softening, separated per microstructure. The 18 °C repeat lands on top of\nthe first run. Bonus insight: as the WLM contribution weakens, one Carreau becomes\ncompetitive — **the data itself tells you when the second mode stops mattering.**"
+    },
+    {
+      "id": "c4202e04d3d2b4fb",
+      "x": -460,
+      "y": 5080,
+      "width": 920,
+      "height": 400,
+      "type": "text",
+      "text": "## 💡 Takeaway\n\nFormulations are mixtures of microstructures; their flow curves are mixtures of\nrelaxation modes. A single-mode model returns a compromise — n = 0.61 describing\nneither the micelles nor the polymer. The microstructure-informed sum fits the\nphysics instead of averaging it, and its parameters move with temperature the way\nreal material parameters should.\n\n*Dataset: `rheodata:caggioni_wlm_polymer_temp_series` · Fits: `rheofit.fit(..., \"carreau_carreau\", effort=\"thorough\", seed=0)` · rheofit 1.0.2*",
+      "color": "3"
+    },
+    {
+      "id": "740942c7337c3e3d",
+      "x": -460,
+      "y": 5550,
+      "width": 920,
+      "height": 120,
+      "type": "text",
+      "text": "[← back to the rheopy ecosystem](https://rheopy.github.io/canvas/)"
+    },
+    {
+      "id": "d360183c0eb8d6ad",
+      "x": -560,
+      "y": -120,
+      "width": 1120,
+      "height": 5920,
+      "type": "group",
+      "label": "carreau_carreau walkthrough",
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "b90a0bc4b28089b1",
+      "fromNode": "66eb326f9962c07f",
+      "fromSide": "bottom",
+      "toNode": "77bc9a5c2f579562",
+      "toSide": "top"
+    },
+    {
+      "id": "43f2ee6484b70da3",
+      "fromNode": "77bc9a5c2f579562",
+      "fromSide": "bottom",
+      "toNode": "a4cef2394e8d91d5",
+      "toSide": "top"
+    },
+    {
+      "id": "3af61f5339941a8b",
+      "fromNode": "a4cef2394e8d91d5",
+      "fromSide": "bottom",
+      "toNode": "bd65897c277b9e3e",
+      "toSide": "top"
+    },
+    {
+      "id": "05012fcf534d888a",
+      "fromNode": "bd65897c277b9e3e",
+      "fromSide": "bottom",
+      "toNode": "c6ef6c83778dfe6f",
+      "toSide": "top"
+    },
+    {
+      "id": "ede656637d649f8d",
+      "fromNode": "c6ef6c83778dfe6f",
+      "fromSide": "bottom",
+      "toNode": "1cfb63e5bde7a433",
+      "toSide": "top"
+    },
+    {
+      "id": "4e3aeb3b6b23a726",
+      "fromNode": "1cfb63e5bde7a433",
+      "fromSide": "bottom",
+      "toNode": "c4202e04d3d2b4fb",
+      "toSide": "top"
+    },
+    {
+      "id": "da13d42e62b4d866",
+      "fromNode": "c4202e04d3d2b4fb",
+      "fromSide": "bottom",
+      "toNode": "740942c7337c3e3d",
+      "toSide": "top"
+    }
+  ]
+}

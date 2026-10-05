@@ -1,157 +1,175 @@
 {
-	"nodes": [
-		{
-			"id": "891dcb4a94ef38dd",
-			"x": -1760,
-			"y": -5360,
-			"width": 4080,
-			"height": 4080,
-			"color": "3",
-			"type": "group",
-			"label": "Rheofit repository"
-		},
-		{
-			"id": "2b5bbca355da81f9",
-			"x": -5334,
-			"y": -3413,
-			"width": 3454,
-			"height": 2133,
-			"color": "6",
-			"type": "group",
-			"label": "Rheolite"
-		},
-		{
-			"id": "2daf19c900489949",
-			"x": -4240,
-			"y": -5360,
-			"width": 1600,
-			"height": 1680,
-			"color": "1",
-			"type": "group",
-			"label": "Github Organization"
-		},
-		{
-			"id": "c439f798be845147",
-			"x": -1200,
-			"y": -3680,
-			"width": 760,
-			"height": 395,
-			"type": "text",
-			"text": "[![rheopy/rheofit on GitHub](assets/snapshots/github-rheofit.png)](https://github.com/rheopy/rheofit)"
-		},
-		{
-			"id": "665f2b1571983f2d",
-			"x": -1520,
-			"y": -5000,
-			"width": 920,
-			"height": 478,
-			"type": "text",
-			"text": "[![rheofit on PyPI](assets/snapshots/pypi-rheofit.png)](https://pypi.org/project/rheofit/)"
-		},
-		{
-			"id": "18cfe6052cb9f811",
-			"type": "text",
-			"x": 640,
-			"y": -5110,
-			"width": 1480,
-			"height": 770,
-			"text": "[![rheofit docs on Read the Docs](assets/snapshots/readthedocs-rheofit.png)](https://rheofit.readthedocs.io/en/latest/)"
-		},
-		{
-			"id": "9b2f7b2a6819ee8b",
-			"type": "text",
-			"x": 640,
-			"y": -3680,
-			"width": 1480,
-			"height": 320,
-			"text": "### \ud83c\udf0a [rheofit fit app](https://rheopy.github.io/rheofit/)\nInteractive marimo WASM flow-curve fitting, runs entirely in the browser."
-		},
-		{
-			"id": "a54856f99ed32dfc",
-			"type": "file",
-			"file": "rheopy_logo.png",
-			"x": -4160,
-			"y": -5240,
-			"width": 400,
-			"height": 400
-		},
-		{
-			"id": "efb734832cdba521",
-			"x": -3640,
-			"y": -5240,
-			"width": 855,
-			"height": 445,
-			"type": "text",
-			"text": "[![rheopy organization on GitHub](assets/snapshots/github-rheopy-org.png)](https://github.com/rheopy)"
-		},
-		{
-			"id": "bdecbe6ac17d7fdf",
-			"x": -5058,
-			"y": -2800,
-			"width": 1098,
-			"height": 571,
-			"type": "text",
-			"text": "[![rheopy/rheolite on GitHub](assets/snapshots/github-rheolite.png)](https://github.com/rheopy/rheolite)"
-		},
-		{
-			"type": "text",
-			"id": "92e5cdc3b0aac86d",
-			"x": -3640,
-			"y": -3200,
-			"width": 1620,
-			"height": 843,
-			"color": "4",
-			"text": "[![rheolite JupyterLite site](assets/snapshots/pages-rheolite.png)](https://rheopy.github.io/rheolite/)"
-		}
-	],
-	"edges": [
-		{
-			"id": "5529cc775450bb01",
-			"fromNode": "2daf19c900489949",
-			"fromSide": "right",
-			"toNode": "c439f798be845147",
-			"toSide": "left",
-			"label": "Rheofit repository"
-		},
-		{
-			"id": "470e1ecdf66b9f48",
-			"fromNode": "c439f798be845147",
-			"fromSide": "top",
-			"toNode": "665f2b1571983f2d",
-			"toSide": "bottom",
-			"label": "Pip Installable Python Library"
-		},
-		{
-			"id": "2f9eb4321bbe67da",
-			"fromNode": "c439f798be845147",
-			"fromSide": "top",
-			"toNode": "18cfe6052cb9f811",
-			"toSide": "left",
-			"label": "Structured Documenttion"
-		},
-		{
-			"id": "c3c31c0db3cc5a3a",
-			"fromNode": "c439f798be845147",
-			"fromSide": "right",
-			"toNode": "9b2f7b2a6819ee8b",
-			"toSide": "left",
-			"label": "Interactive Marimo app"
-		},
-		{
-			"id": "3117fa5eca5f9f9d",
-			"fromNode": "bdecbe6ac17d7fdf",
-			"fromSide": "bottom",
-			"toNode": "92e5cdc3b0aac86d",
-			"toSide": "left"
-		},
-		{
-			"id": "6957d7eea1febe32",
-			"fromNode": "665f2b1571983f2d",
-			"fromSide": "left",
-			"toNode": "92e5cdc3b0aac86d",
-			"toSide": "top",
-			"fromEnd": "arrow",
-			"label": "micropip install rheofit in the pyodide kernel"
-		}
-	]
+  "nodes": [
+    {
+      "id": "891dcb4a94ef38dd",
+      "x": -1760,
+      "y": -5360,
+      "width": 4080,
+      "height": 4080,
+      "color": "3",
+      "type": "group",
+      "label": "Rheofit repository"
+    },
+    {
+      "id": "2b5bbca355da81f9",
+      "x": -5334,
+      "y": -3413,
+      "width": 3454,
+      "height": 2133,
+      "color": "6",
+      "type": "group",
+      "label": "Rheolite"
+    },
+    {
+      "id": "2daf19c900489949",
+      "x": -4240,
+      "y": -5360,
+      "width": 1600,
+      "height": 1680,
+      "color": "1",
+      "type": "group",
+      "label": "Github Organization"
+    },
+    {
+      "id": "c439f798be845147",
+      "x": -1200,
+      "y": -3680,
+      "width": 760,
+      "height": 395,
+      "type": "text",
+      "text": "[![rheopy/rheofit on GitHub](assets/snapshots/github-rheofit.png)](https://github.com/rheopy/rheofit)"
+    },
+    {
+      "id": "665f2b1571983f2d",
+      "x": -1520,
+      "y": -5000,
+      "width": 920,
+      "height": 478,
+      "type": "text",
+      "text": "[![rheofit on PyPI](assets/snapshots/pypi-rheofit.png)](https://pypi.org/project/rheofit/)"
+    },
+    {
+      "id": "18cfe6052cb9f811",
+      "type": "text",
+      "x": 640,
+      "y": -5110,
+      "width": 1480,
+      "height": 770,
+      "text": "[![rheofit docs on Read the Docs](assets/snapshots/readthedocs-rheofit.png)](https://rheofit.readthedocs.io/en/latest/)"
+    },
+    {
+      "id": "9b2f7b2a6819ee8b",
+      "type": "text",
+      "x": 640,
+      "y": -3680,
+      "width": 1480,
+      "height": 320,
+      "text": "### 🌊 [rheofit fit app](https://rheopy.github.io/rheofit/)\nInteractive marimo WASM flow-curve fitting, runs entirely in the browser."
+    },
+    {
+      "id": "a54856f99ed32dfc",
+      "type": "file",
+      "file": "rheopy_logo.png",
+      "x": -4160,
+      "y": -5240,
+      "width": 400,
+      "height": 400
+    },
+    {
+      "id": "efb734832cdba521",
+      "x": -3640,
+      "y": -5240,
+      "width": 855,
+      "height": 445,
+      "type": "text",
+      "text": "[![rheopy organization on GitHub](assets/snapshots/github-rheopy-org.png)](https://github.com/rheopy)"
+    },
+    {
+      "id": "bdecbe6ac17d7fdf",
+      "x": -5058,
+      "y": -2800,
+      "width": 1098,
+      "height": 571,
+      "type": "text",
+      "text": "[![rheopy/rheolite on GitHub](assets/snapshots/github-rheolite.png)](https://github.com/rheopy/rheolite)"
+    },
+    {
+      "type": "text",
+      "id": "92e5cdc3b0aac86d",
+      "x": -3640,
+      "y": -3200,
+      "width": 1620,
+      "height": 843,
+      "color": "4",
+      "text": "[![rheolite JupyterLite site](assets/snapshots/pages-rheolite.png)](https://rheopy.github.io/rheolite/)"
+    },
+    {
+      "id": "0686a9a8fb46e669",
+      "x": 640,
+      "y": -3260,
+      "width": 1480,
+      "height": 260,
+      "type": "text",
+      "color": "6",
+      "text": "### 📖 [Case study: the carreau–carreau walkthrough](https://rheopy.github.io/canvas/?canvas=walkthrough-carreau-carreau)\n\nTwo microstructures, two relaxation times — the rheofit walkthrough presented as an interactive canvas: explanations, plots, and results tables."
+    }
+  ],
+  "edges": [
+    {
+      "id": "5529cc775450bb01",
+      "fromNode": "2daf19c900489949",
+      "fromSide": "right",
+      "toNode": "c439f798be845147",
+      "toSide": "left",
+      "label": "Rheofit repository"
+    },
+    {
+      "id": "470e1ecdf66b9f48",
+      "fromNode": "c439f798be845147",
+      "fromSide": "top",
+      "toNode": "665f2b1571983f2d",
+      "toSide": "bottom",
+      "label": "Pip Installable Python Library"
+    },
+    {
+      "id": "2f9eb4321bbe67da",
+      "fromNode": "c439f798be845147",
+      "fromSide": "top",
+      "toNode": "18cfe6052cb9f811",
+      "toSide": "left",
+      "label": "Structured Documenttion"
+    },
+    {
+      "id": "c3c31c0db3cc5a3a",
+      "fromNode": "c439f798be845147",
+      "fromSide": "right",
+      "toNode": "9b2f7b2a6819ee8b",
+      "toSide": "left",
+      "label": "Interactive Marimo app"
+    },
+    {
+      "id": "3117fa5eca5f9f9d",
+      "fromNode": "bdecbe6ac17d7fdf",
+      "fromSide": "bottom",
+      "toNode": "92e5cdc3b0aac86d",
+      "toSide": "left"
+    },
+    {
+      "id": "6957d7eea1febe32",
+      "fromNode": "665f2b1571983f2d",
+      "fromSide": "left",
+      "toNode": "92e5cdc3b0aac86d",
+      "toSide": "top",
+      "fromEnd": "arrow",
+      "label": "micropip install rheofit in the pyodide kernel"
+    },
+    {
+      "id": "086c8ff0055ab223",
+      "fromNode": "9b2f7b2a6819ee8b",
+      "fromSide": "bottom",
+      "toNode": "0686a9a8fb46e669",
+      "toSide": "top",
+      "label": "case study"
+    }
+  ]
 }
