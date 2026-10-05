@@ -34,12 +34,12 @@
 </head>
 <body>
 <div id="brand">
-  <h1>🌊 rheopy ecosystem</h1>
-  <p>Open rheology, end to end — pan, zoom, click through.</p>
+  <h1 id="brandTitle">🌊 rheopy ecosystem</h1>
+  <p id="brandSub">Open rheology, end to end — pan, zoom, click through.</p>
   <div class="row">
     <button id="themeBtn" title="Toggle light / dark">🌙 dark</button>
     <a class="btn" href="https://github.com/rheopy/canvas" target="_blank" rel="noopener">⬢ repo</a>
-    <a class="btn" href="ecosystem.canvas" download>⤓ .canvas</a>
+    <a class="btn" id="dlBtn" href="ecosystem.canvas" download>⤓ .canvas</a>
   </div>
 </div>
 <div id="viewer"></div>
@@ -47,10 +47,31 @@
 import { JSONCanvasViewer, parser, fetchCanvas, Minimap, Controls }
   from './viewer/chimp.js';
 
+const CANVASES = {
+  'ecosystem': {
+    file: 'ecosystem.canvas',
+    title: '🌊 rheopy ecosystem',
+    sub: 'Open rheology, end to end — pan, zoom, click through.',
+  },
+  'walkthrough-carreau-carreau': {
+    file: 'walkthrough-carreau-carreau.canvas',
+    title: '🧭 carreau–carreau walkthrough',
+    sub: 'Two microstructures, two relaxation times — a rheofit case study.',
+  },
+};
+const key = (new URLSearchParams(location.search).get('canvas') || 'ecosystem')
+  .toLowerCase().replace(/[^a-z0-9-]/g, '');
+const meta = CANVASES[key] || CANVASES['ecosystem'];
+
+document.getElementById('brandTitle').textContent = meta.title;
+document.getElementById('brandSub').textContent = meta.sub;
+document.getElementById('dlBtn').href = meta.file;
+document.title = meta.title;
+
 const viewer = new JSONCanvasViewer(
   {
     container: document.getElementById('viewer'),
-    canvas: await fetchCanvas('ecosystem.canvas'),
+    canvas: await fetchCanvas(meta.file),
     parser,
     // remap the canvas attachment to its served location
     attachments: { 'assets/test_clip.mp4': 'assets/test_clip.mp4' },
