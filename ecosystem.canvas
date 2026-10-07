@@ -16,8 +16,10 @@
 		{"type":"text","id":"9b2f7b2a6819ee8b","text":"### 🌊 [rheofit fit app](https://rheopy.github.io/rheofit/)\nInteractive marimo WASM flow-curve fitting, runs entirely in the browser.","x":-174,"y":-2660,"width":500,"height":130},
 		{"type":"text","id":"c439f798be845147","text":"[![rheopy/rheofit on GitHub](assets/snapshots/github-rheofit.png)](https://github.com/rheopy/rheofit)","x":-920,"y":-3120,"width":500,"height":260},
 		{"type":"text","id":"18cfe6052cb9f811","text":"[![rheofit docs on Read the Docs](assets/snapshots/readthedocs-rheofit.png)](https://rheofit.readthedocs.io/en/latest/)","x":-80,"y":-3120,"width":500,"height":260},
-		{"type":"file","id":"5c1b0870d3f4ba7c","file":"rheodata_schema.png","x":-1570,"y":-1160,"width":795,"height":596},
-		{"type":"text","id":"81e90401689dd156","text":"```python\nimport rheodata\n\nrheodata.list()                                   # every dataset, one row each\nrheodata.search(material=\"carbopol\")              # substring filters, case-insensitive\nrheodata.search(experiment=\"flow_curve\", tag=\"yield-stress\")\nrheodata.search(query=\"wormlike micelles\")        # title / description / material\n\nrheodata.info(\"caggioni_pg_carbopol_2pct\")                 # readable summary + DOI link\n\nds = rheodata.load(\"caggioni_pg_carbopol_2pct\")\nds.df.head()                                      # tidy data\nds.meta[\"measurement\"]                            # type, geometry, temperature, protocol\n\nfig = rheodata.plot(\"caggioni_pg_carbopol_2pct\")           # one curve per sample\nfig.savefig(\"caggioni_pg_carbopol_2pct.png\")\n\nfit_df = rheodata.to_rheofit(\"caggioni_pg_carbopol_2pct\", sample=\"carbopol_2pct\")\n# → DataFrame with \"Shear rate / 1/s\" and \"Stress / Pa\", x sorted ascending\n```","x":-645,"y":-1160,"width":471,"height":640}
+		{"type":"file","id":"5c1b0870d3f4ba7c","file":"assets/snapshots/rheodata_schema.png","x":-1570,"y":-1160,"width":795,"height":596},
+		{"type":"text","id":"81e90401689dd156","text":"```python\nimport rheodata\n\nrheodata.list()                                   # every dataset, one row each\nrheodata.search(material=\"carbopol\")              # substring filters, case-insensitive\nrheodata.search(experiment=\"flow_curve\", tag=\"yield-stress\")\nrheodata.search(query=\"wormlike micelles\")        # title / description / material\n\nrheodata.info(\"caggioni_pg_carbopol_2pct\")                 # readable summary + DOI link\n\nds = rheodata.load(\"caggioni_pg_carbopol_2pct\")\nds.df.head()                                      # tidy data\nds.meta[\"measurement\"]                            # type, geometry, temperature, protocol\n\nfig = rheodata.plot(\"caggioni_pg_carbopol_2pct\")           # one curve per sample\nfig.savefig(\"caggioni_pg_carbopol_2pct.png\")\n\nfit_df = rheodata.to_rheofit(\"caggioni_pg_carbopol_2pct\", sample=\"carbopol_2pct\")\n# → DataFrame with \"Shear rate / 1/s\" and \"Stress / Pa\", x sorted ascending\n```","x":-645,"y":-1160,"width":471,"height":640},
+		{"id":"f3c36d142365edb5","type":"link","url":"https://rheopy.github.io/rheofit/","x":680,"y":-3168,"width":1160,"height":1688},
+		{"id":"378012546944dacd","type":"file","file":"assets/snapshots/marimo_logo.png","x":680,"y":-3400,"width":160,"height":160}
 	],
 	"edges":[
 		{"id":"5529cc775450bb01","fromNode":"2daf19c900489949","fromSide":"right","toNode":"891dcb4a94ef38dd","toSide":"left","label":"Rheofit repository"},
@@ -28,6 +30,8 @@
 		{"id":"db916ab9165f3e42","fromNode":"2daf19c900489949","fromSide":"left","toNode":"2b5bbca355da81f9","toSide":"left"},
 		{"id":"87b8a45e1dc33829","fromNode":"2daf19c900489949","fromSide":"left","toNode":"8d04fc9f046b1b59","toSide":"left"},
 		{"id":"2e9810404bec8d98","fromNode":"2daf19c900489949","fromSide":"left","toNode":"a98384efa456a0cd","toSide":"left"},
-		{"id":"d8eea3f6-cabb-4292-8477-69bd42968d82","style":"solid","shape":"curved","fromNode":"ead3289a09755bf8","fromSide":"right","toNode":"5c1b0870d3f4ba7c","toSide":"left"}
+		{"id":"d8eea3f6-cabb-4292-8477-69bd42968d82","style":"solid","shape":"curved","fromNode":"ead3289a09755bf8","fromSide":"right","toNode":"5c1b0870d3f4ba7c","toSide":"left"},
+		{"id":"e857ae191165f212","fromNode":"9b2f7b2a6819ee8b","fromSide":"right","toNode":"f3c36d142365edb5","toSide":"left"},
+		{"id":"54c06f0e54395bbe","fromNode":"8d04fc9f046b1b59","fromSide":"right","toNode":"f3c36d142365edb5","toSide":"left"}
 	]
 }
