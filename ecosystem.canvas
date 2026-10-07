@@ -1,175 +1,33 @@
 {
-  "nodes": [
-    {
-      "id": "891dcb4a94ef38dd",
-      "x": -1760,
-      "y": -5360,
-      "width": 4080,
-      "height": 4080,
-      "color": "3",
-      "type": "group",
-      "label": "Rheofit repository"
-    },
-    {
-      "id": "2b5bbca355da81f9",
-      "x": -5334,
-      "y": -3413,
-      "width": 3454,
-      "height": 2133,
-      "color": "6",
-      "type": "group",
-      "label": "Rheolite"
-    },
-    {
-      "id": "2daf19c900489949",
-      "x": -4240,
-      "y": -5360,
-      "width": 1600,
-      "height": 1680,
-      "color": "1",
-      "type": "group",
-      "label": "Github Organization"
-    },
-    {
-      "id": "c439f798be845147",
-      "x": -1200,
-      "y": -3680,
-      "width": 760,
-      "height": 395,
-      "type": "text",
-      "text": "[![rheopy/rheofit on GitHub](assets/snapshots/github-rheofit.png)](https://github.com/rheopy/rheofit)"
-    },
-    {
-      "id": "665f2b1571983f2d",
-      "x": -1520,
-      "y": -5000,
-      "width": 920,
-      "height": 478,
-      "type": "text",
-      "text": "[![rheofit on PyPI](assets/snapshots/pypi-rheofit.png)](https://pypi.org/project/rheofit/)"
-    },
-    {
-      "id": "18cfe6052cb9f811",
-      "type": "text",
-      "x": 640,
-      "y": -5110,
-      "width": 1480,
-      "height": 770,
-      "text": "[![rheofit docs on Read the Docs](assets/snapshots/readthedocs-rheofit.png)](https://rheofit.readthedocs.io/en/latest/)"
-    },
-    {
-      "id": "9b2f7b2a6819ee8b",
-      "type": "text",
-      "x": 640,
-      "y": -3680,
-      "width": 1480,
-      "height": 320,
-      "text": "### 🌊 [rheofit fit app](https://rheopy.github.io/rheofit/)\nInteractive marimo WASM flow-curve fitting, runs entirely in the browser."
-    },
-    {
-      "id": "a54856f99ed32dfc",
-      "type": "file",
-      "file": "rheopy_logo.png",
-      "x": -4160,
-      "y": -5240,
-      "width": 400,
-      "height": 400
-    },
-    {
-      "id": "efb734832cdba521",
-      "x": -3640,
-      "y": -5240,
-      "width": 855,
-      "height": 445,
-      "type": "text",
-      "text": "[![rheopy organization on GitHub](assets/snapshots/github-rheopy-org.png)](https://github.com/rheopy)"
-    },
-    {
-      "id": "bdecbe6ac17d7fdf",
-      "x": -5058,
-      "y": -2800,
-      "width": 1098,
-      "height": 571,
-      "type": "text",
-      "text": "[![rheopy/rheolite on GitHub](assets/snapshots/github-rheolite.png)](https://github.com/rheopy/rheolite)"
-    },
-    {
-      "type": "text",
-      "id": "92e5cdc3b0aac86d",
-      "x": -3640,
-      "y": -3200,
-      "width": 1620,
-      "height": 843,
-      "color": "4",
-      "text": "[![rheolite JupyterLite site](assets/snapshots/pages-rheolite.png)](https://rheopy.github.io/rheolite/)"
-    },
-    {
-      "id": "0686a9a8fb46e669",
-      "x": 640,
-      "y": -3260,
-      "width": 1480,
-      "height": 260,
-      "type": "text",
-      "color": "6",
-      "text": "### 📖 [Case study: the carreau–carreau walkthrough](https://rheopy.github.io/canvas/?canvas=walkthrough-carreau-carreau)\n\nTwo microstructures, two relaxation times — the rheofit walkthrough presented as an interactive canvas: explanations, plots, and results tables."
-    }
-  ],
-  "edges": [
-    {
-      "id": "5529cc775450bb01",
-      "fromNode": "2daf19c900489949",
-      "fromSide": "right",
-      "toNode": "c439f798be845147",
-      "toSide": "left",
-      "label": "Rheofit repository"
-    },
-    {
-      "id": "470e1ecdf66b9f48",
-      "fromNode": "c439f798be845147",
-      "fromSide": "top",
-      "toNode": "665f2b1571983f2d",
-      "toSide": "bottom",
-      "label": "Pip Installable Python Library"
-    },
-    {
-      "id": "2f9eb4321bbe67da",
-      "fromNode": "c439f798be845147",
-      "fromSide": "top",
-      "toNode": "18cfe6052cb9f811",
-      "toSide": "left",
-      "label": "Structured Documenttion"
-    },
-    {
-      "id": "c3c31c0db3cc5a3a",
-      "fromNode": "c439f798be845147",
-      "fromSide": "right",
-      "toNode": "9b2f7b2a6819ee8b",
-      "toSide": "left",
-      "label": "Interactive Marimo app"
-    },
-    {
-      "id": "3117fa5eca5f9f9d",
-      "fromNode": "bdecbe6ac17d7fdf",
-      "fromSide": "bottom",
-      "toNode": "92e5cdc3b0aac86d",
-      "toSide": "left"
-    },
-    {
-      "id": "6957d7eea1febe32",
-      "fromNode": "665f2b1571983f2d",
-      "fromSide": "left",
-      "toNode": "92e5cdc3b0aac86d",
-      "toSide": "top",
-      "fromEnd": "arrow",
-      "label": "micropip install rheofit in the pyodide kernel"
-    },
-    {
-      "id": "086c8ff0055ab223",
-      "fromNode": "9b2f7b2a6819ee8b",
-      "fromSide": "bottom",
-      "toNode": "0686a9a8fb46e669",
-      "toSide": "top",
-      "label": "case study"
-    }
-  ]
+	"nodes":[
+		{"type":"group","id":"2b5bbca355da81f9","x":-2298,"y":-2000,"width":2744,"height":700,"color":"6","label":"Rheolite"},
+		{"type":"group","id":"8d04fc9f046b1b59","x":-2298,"y":-1200,"width":2744,"height":700,"color":"4","label":"Rheodata"},
+		{"type":"group","id":"a98384efa456a0cd","x":-2298,"y":-400,"width":2744,"height":700,"color":"2","label":"Rheomodel"},
+		{"type":"group","id":"891dcb4a94ef38dd","x":-954,"y":-3160,"width":1400,"height":1026,"color":"3","label":"Rheofit repository"},
+		{"type":"group","id":"2daf19c900489949","x":-2298,"y":-3160,"width":800,"height":1026,"color":"1","label":"Github Organization"},
+		{"type":"link","id":"196f0964b1461eea","url":"https://rheopy.github.io/rheolite/lab/index.html","x":-1570,"y":-1920,"width":1990,"height":580},
+		{"type":"text","id":"bdecbe6ac17d7fdf","text":"[![rheopy/rheolite on GitHub](assets/snapshots/github-rheolite.png)](https://github.com/rheopy/rheolite)","x":-2240,"y":-1920,"width":500,"height":260},
+		{"type":"text","id":"87aaad9c5de7e243","text":"# The Rheopy organization\n\nContainer for the different repository aiming to cover end to end rheology characterization workflow:\n* Measurement - work in progress\n* Data - Proof of concept\n* Fit - Prototype\n* Playground","x":-2258,"y":-2840,"width":688,"height":270},
+		{"type":"file","id":"a54856f99ed32dfc","file":"rheopy_logo.png","x":-2258,"y":-3100,"width":200,"height":200},
+		{"type":"text","id":"efb734832cdba521","text":"[![rheopy organization on GitHub](assets/snapshots/github-rheopy-org.png)](https://github.com/rheopy)","x":-1998,"y":-3100,"width":428,"height":222},
+		{"type":"text","id":"ead3289a09755bf8","text":"[![rheopy organization on GitHub](assets/snapshots/rheodata_card.png)](https://github.com/rheopy)","x":-2242,"y":-1160,"width":500,"height":298},
+		{"type":"text","id":"0686a9a8fb46e669","text":"### 📖 [Case study: the carreau–carreau walkthrough](https://rheopy.github.io/canvas/?canvas=walkthrough-carreau-carreau)\n\nTwo microstructures, two relaxation times — the rheofit walkthrough presented as an interactive canvas: explanations, plots, and results tables.","x":-174,"y":-2360,"width":500,"height":170,"color":"6"},
+		{"type":"text","id":"665f2b1571983f2d","text":"[![rheofit on PyPI](assets/snapshots/pypi-rheofit.png)](https://pypi.org/project/rheofit/)","x":-920,"y":-2660,"width":500,"height":260},
+		{"type":"text","id":"9b2f7b2a6819ee8b","text":"### 🌊 [rheofit fit app](https://rheopy.github.io/rheofit/)\nInteractive marimo WASM flow-curve fitting, runs entirely in the browser.","x":-174,"y":-2660,"width":500,"height":130},
+		{"type":"text","id":"c439f798be845147","text":"[![rheopy/rheofit on GitHub](assets/snapshots/github-rheofit.png)](https://github.com/rheopy/rheofit)","x":-920,"y":-3120,"width":500,"height":260},
+		{"type":"text","id":"18cfe6052cb9f811","text":"[![rheofit docs on Read the Docs](assets/snapshots/readthedocs-rheofit.png)](https://rheofit.readthedocs.io/en/latest/)","x":-80,"y":-3120,"width":500,"height":260},
+		{"type":"file","id":"5c1b0870d3f4ba7c","file":"rheodata_schema.png","x":-1570,"y":-1160,"width":795,"height":596},
+		{"type":"text","id":"81e90401689dd156","text":"```python\nimport rheodata\n\nrheodata.list()                                   # every dataset, one row each\nrheodata.search(material=\"carbopol\")              # substring filters, case-insensitive\nrheodata.search(experiment=\"flow_curve\", tag=\"yield-stress\")\nrheodata.search(query=\"wormlike micelles\")        # title / description / material\n\nrheodata.info(\"caggioni_pg_carbopol_2pct\")                 # readable summary + DOI link\n\nds = rheodata.load(\"caggioni_pg_carbopol_2pct\")\nds.df.head()                                      # tidy data\nds.meta[\"measurement\"]                            # type, geometry, temperature, protocol\n\nfig = rheodata.plot(\"caggioni_pg_carbopol_2pct\")           # one curve per sample\nfig.savefig(\"caggioni_pg_carbopol_2pct.png\")\n\nfit_df = rheodata.to_rheofit(\"caggioni_pg_carbopol_2pct\", sample=\"carbopol_2pct\")\n# → DataFrame with \"Shear rate / 1/s\" and \"Stress / Pa\", x sorted ascending\n```","x":-645,"y":-1160,"width":471,"height":640}
+	],
+	"edges":[
+		{"id":"5529cc775450bb01","fromNode":"2daf19c900489949","fromSide":"right","toNode":"891dcb4a94ef38dd","toSide":"left","label":"Rheofit repository"},
+		{"id":"470e1ecdf66b9f48","fromNode":"c439f798be845147","fromSide":"bottom","toNode":"665f2b1571983f2d","toSide":"top","label":"Pip Installable Python Library"},
+		{"id":"2f9eb4321bbe67da","fromNode":"c439f798be845147","fromSide":"right","toNode":"18cfe6052cb9f811","toSide":"left","label":"Structured Documenttion"},
+		{"id":"c3c31c0db3cc5a3a","fromNode":"c439f798be845147","fromSide":"right","toNode":"9b2f7b2a6819ee8b","toSide":"left","label":"Interactive Marimo app"},
+		{"id":"086c8ff0055ab223","fromNode":"9b2f7b2a6819ee8b","fromSide":"bottom","toNode":"0686a9a8fb46e669","toSide":"top","label":"case study"},
+		{"id":"db916ab9165f3e42","fromNode":"2daf19c900489949","fromSide":"left","toNode":"2b5bbca355da81f9","toSide":"left"},
+		{"id":"87b8a45e1dc33829","fromNode":"2daf19c900489949","fromSide":"left","toNode":"8d04fc9f046b1b59","toSide":"left"},
+		{"id":"2e9810404bec8d98","fromNode":"2daf19c900489949","fromSide":"left","toNode":"a98384efa456a0cd","toSide":"left"},
+		{"id":"d8eea3f6-cabb-4292-8477-69bd42968d82","style":"solid","shape":"curved","fromNode":"ead3289a09755bf8","fromSide":"right","toNode":"5c1b0870d3f4ba7c","toSide":"left"}
+	]
 }
