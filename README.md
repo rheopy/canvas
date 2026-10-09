@@ -13,12 +13,14 @@ the browser with the open-source
 |---|---|
 | `ecosystem.canvas` | The map itself — plain JSON, opens in Obsidian too |
 | `walkthrough-carreau-carreau.canvas` | A second canvas: the rheofit carreau–carreau walkthrough as an interactive narrative |
+| `using-rheopy.canvas` | A third canvas: the rheopy API in one picture — measure → data → model → fit → explore |
 | `index.html` | The GitHub Pages site embedding the viewer |
 | `viewer/chimp.js` | The viewer, vendored from `json-canvas-viewer@4.3.2` (npm) — no CDN needed |
 | `assets/test_clip.mp4` | CaBER test clip, played inline as a video node |
 | `assets/snapshots/*.png` | Page snapshots backing the clickable preview nodes |
 | `assets/walkthrough/*` | Walkthrough figures + mermaid diagram used by the walkthrough canvas |
 | `build_walkthrough.py` | Generator script for the walkthrough canvas (run it, commit the `.canvas` output) |
+| `build_api_guide.py` | Generator script for the API guide canvas (run it, commit the `.canvas` output) |
 
 ## The map
 
@@ -38,6 +40,8 @@ parameter — it defaults to the ecosystem map:
 - `https://rheopy.github.io/canvas/` — the ecosystem map
 - `https://rheopy.github.io/canvas/?canvas=walkthrough-carreau-carreau` —
   the carreau–carreau walkthrough, linked from the rheofit node on the map
+- `https://rheopy.github.io/canvas/?canvas=using-rheopy` —
+  the rheopy API in one picture, linked from the fit-app node on the map
 
 To add another canvas: drop a `<name>.canvas` file next to the others,
 register it in the `CANVASES` table at the top of `index.html`, and link to
