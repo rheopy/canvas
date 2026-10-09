@@ -21,6 +21,7 @@ the browser with the open-source
 | `assets/walkthrough/*` | Walkthrough figures + mermaid diagram used by the walkthrough canvas |
 | `build_walkthrough.py` | Generator script for the walkthrough canvas (run it, commit the `.canvas` output) |
 | `build_api_guide.py` | Generator script for the API guide canvas (run it, commit the `.canvas` output) |
+| `build_offline.py` | Builds a single-file offline viewer for any `.canvas` (embeds the exact same `viewer/chimp.js`, so online and offline render identically) |
 
 ## The map
 
@@ -47,6 +48,21 @@ To add another canvas: drop a `<name>.canvas` file next to the others,
 register it in the `CANVASES` table at the top of `index.html`, and link to
 it as `?canvas=<name>`. The header title, subtitle, and `.canvas` download
 button follow the active canvas automatically.
+
+## Offline single-file viewer
+
+`build_offline.py` packages any canvas into one self-contained HTML file:
+
+```bash
+python3 build_offline.py using-rheopy.canvas   # → using-rheopy-offline.html
+```
+
+The output embeds **the exact same JavaScript** the online site uses
+(`viewer/chimp.js`, byte-identical), so online and offline render identically —
+one viewer codebase, two distributions. The canvas JSON, markdown-referenced
+images, and the video attachment are inlined too: the file needs no network,
+open it from disk or drop it into SharePoint. Outputs are git-ignored
+(`*-offline.html`); rebuild them whenever the canvas or the viewer changes.
 
 ## Editing the canvas
 
