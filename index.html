@@ -33,6 +33,25 @@
   #viewer .JSON-Canvas-Viewer .JCV-overlay-container .JCV-content.JCV-markdown-content {
     font-size: 8px;
   }
+  /* hand-colored code blocks (see build_api_guide.py) */
+  #viewer .codeblock { position: relative; margin: 10px 0; }
+  #viewer .codeblock pre { margin: 0; }
+  #viewer .codelang {
+    position: absolute; top: 6px; right: 10px; font-size: 10px; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: .08em; pointer-events: none;
+  }
+  #viewer .ck { color: #7c3aed; font-weight: 600; }
+  #viewer .cs { color: #047857; }
+  #viewer .cc { color: #9ca3af; font-style: italic; }
+  #viewer .cn { color: #b45309; }
+  #viewer .cd { color: #2563eb; }
+  #viewer .cb { color: #0e7490; }
+  body.dark #viewer .ck { color: #c4b5fd; }
+  body.dark #viewer .cs { color: #6ee7b7; }
+  body.dark #viewer .cc { color: #7d8590; }
+  body.dark #viewer .cn { color: #fbbf24; }
+  body.dark #viewer .cd { color: #93c5fd; }
+  body.dark #viewer .cb { color: #67e8f9; }
 </style>
 </head>
 <body>

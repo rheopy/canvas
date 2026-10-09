@@ -1,83 +1,83 @@
 {
   "nodes": [
     {
-      "id": "05b52fe8c75a43a4",
-      "x": -1010,
+      "id": "fb1f784544e935c0",
+      "x": -660,
       "y": 0,
-      "width": 1920,
-      "height": 380,
+      "width": 1280,
+      "height": 220,
       "type": "text",
       "text": "# 🗺️ Using rheopy — the API in one picture\n\nThe rheopy way: **measure → data → model → fit → explore**.\n\nEach package does exactly one job, and they snap together: **rheodata** serves\ncurated datasets, **rheomodel** holds the constitutive equations, **rheofit** runs\nthe nonlinear regression, **rheolite** is the notebook + browser playground."
     },
     {
-      "id": "9063add9b811e3c2",
-      "x": -1010,
-      "y": 450,
-      "width": 1920,
-      "height": 220,
+      "id": "a3a56658b42bfc5d",
+      "x": -660,
+      "y": 260,
+      "width": 1280,
+      "height": 180,
       "type": "text",
       "text": "## 📦 Install\n\n```bash\npip install rheopy-rheodata rheopy-rheomodel rheofit\n```"
     },
     {
-      "id": "9725a3ec52f7407f",
-      "x": -1010,
-      "y": 740,
-      "width": 920,
-      "height": 680,
+      "id": "96810f5c73c339b7",
+      "x": -660,
+      "y": 480,
+      "width": 600,
+      "height": 360,
       "type": "text",
-      "text": "## 🗃️ rheodata — data in\n\nCurated rheology datasets with provenance, measurement records, and citations.\n\n```python\nimport rheodata\n\nrheodata.list()                               # every dataset, one row each\nrheodata.search(material=\"carbopol\")          # substring filters\nrheodata.info(\"caggioni_pg_carbopol_2pct\")    # summary + DOI link\n\nds = rheodata.load(\"caggioni_pg_carbopol_2pct\")\nds.df.head()                                  # tidy DataFrame\nrheodata.plot(\"caggioni_pg_carbopol_2pct\")     # experiment-appropriate figure\n```"
+      "text": "## 🗃️ rheodata — data in\n\nCurated rheology datasets with provenance, measurement records, and citations.\n\n<div class=\"codeblock\"><span class=\"codelang\">python</span>\n<pre><code><span class=\"ck\">import</span> rheodata\n\nrheodata.<span class=\"cb\">list</span>()                             <span class=\"cc\"># every dataset, one row each</span>\nrheodata.search(material=<span class=\"cs\">\"carbopol\"</span>)        <span class=\"cc\"># substring filters</span>\nrheodata.info(<span class=\"cs\">\"caggioni_pg_carbopol_2pct\"</span>)  <span class=\"cc\"># summary + DOI link</span>\n\nds = rheodata.load(<span class=\"cs\">\"caggioni_pg_carbopol_2pct\"</span>)\nds.df.head()                                <span class=\"cc\"># tidy DataFrame</span>\nrheodata.plot(<span class=\"cs\">\"caggioni_pg_carbopol_2pct\"</span>)   <span class=\"cc\"># figure</span></code></pre>\n</div>\n"
     },
     {
-      "id": "b3cf3081020aa8d8",
-      "x": 0,
-      "y": 740,
-      "width": 920,
-      "height": 680,
+      "id": "f2ff0fcea69f57a8",
+      "x": -20,
+      "y": 480,
+      "width": 600,
+      "height": 360,
       "type": "text",
-      "text": "## 🧮 rheomodel — pick a model\n\nNine flow-curve models as pure functions — equations, bounds, verified citations.\n\n- **Yield stress:** `herschel_bulkley`, `bingham`, `casson`\n- **Microstructure-informed:** `tc`, `tc_carreau`, `tccc`\n- **No yield stress:** `power_law`, `carreau`, `carreau_carreau`\n\n```python\nimport rheomodel\n\nhb = rheomodel.get_model(\"herschel_bulkley\")\nsigma = hb.equation(gamma_dot, sigma_y=20.0, K=10.0, n=0.6)\n# hb.CITATION, hb.PARAM_INFO, hb.get_equation_latex()\n```"
+      "text": "## 🧮 rheomodel — pick a model\n\nNine flow-curve models as pure functions — equations, bounds, verified citations.\n\n- **Yield stress:** `herschel_bulkley`, `bingham`, `casson`\n- **Microstructure-informed:** `tc`, `tc_carreau`, `tccc`\n- **No yield stress:** `power_law`, `carreau`, `carreau_carreau`\n\n<div class=\"codeblock\"><span class=\"codelang\">python</span>\n<pre><code><span class=\"ck\">import</span> rheomodel\n\nhb = rheomodel.get_model(<span class=\"cs\">\"herschel_bulkley\"</span>)\nsigma = hb.equation(gamma_dot, sigma_y=<span class=\"cn\">20.0</span>, K=<span class=\"cn\">10.0</span>, n=<span class=\"cn\">0.6</span>)\n<span class=\"cc\"># hb.CITATION - hb.PARAM_INFO - hb.get_equation_latex()</span></code></pre>\n</div>\n"
     },
     {
-      "id": "c83f484b9bf0bb71",
-      "x": -1010,
-      "y": 1490,
-      "width": 920,
-      "height": 400,
+      "id": "a8c7d92ace6a54c6",
+      "x": -660,
+      "y": 880,
+      "width": 600,
+      "height": 240,
       "type": "text",
-      "text": "## 🔧 The bridge — data → fit\n\n```python\ndf = rheodata.to_rheofit(\"caggioni_pg_carbopol_2pct\",\n                         sample=\"carbopol_2pct\")\n# → DataFrame with \"Shear rate / 1/s\" and \"Stress / Pa\",\n#   exactly the shape rheofit.fit expects\n```"
+      "text": "## 🔧 The bridge — data → fit\n\n<div class=\"codeblock\"><span class=\"codelang\">python</span>\n<pre><code>df = rheodata.to_rheofit(<span class=\"cs\">\"caggioni_pg_carbopol_2pct\"</span>,\n                         sample=<span class=\"cs\">\"carbopol_2pct\"</span>)\n<span class=\"cc\"># -&gt; \"Shear rate / 1/s\" and \"Stress / Pa\",</span>\n<span class=\"cc\">#    exactly what rheofit.fit expects</span></code></pre>\n</div>\n"
     },
     {
-      "id": "d43c5a19de8566b9",
-      "x": -1010,
-      "y": 1960,
-      "width": 1920,
-      "height": 480,
+      "id": "06a559b79feb43c4",
+      "x": -660,
+      "y": 1160,
+      "width": 1280,
+      "height": 300,
       "type": "text",
-      "text": "## 🎯 rheofit — fit\n\nNonlinear regression with physics-informed starts, ladder seeding, and\nmulti-start global search (`effort`: fast / normal / thorough).\n\n```python\nimport rheofit\n\nres = rheofit.fit(df, \"carreau_carreau\", effort=\"thorough\", seed=0)\n# res.params — fitted values with uncertainties\n```"
+      "text": "## 🎯 rheofit — fit\n\nNonlinear regression: physics-informed starts, ladder seeding, multi-start\nglobal search (`effort`: fast / normal / thorough).\n\n<div class=\"codeblock\"><span class=\"codelang\">python</span>\n<pre><code><span class=\"ck\">import</span> rheofit\n\nres = rheofit.fit(df, <span class=\"cs\">\"carreau_carreau\"</span>, effort=<span class=\"cs\">\"thorough\"</span>, seed=<span class=\"cn\">0</span>)\n<span class=\"cc\"># res.params - fitted values with uncertainties</span></code></pre>\n</div>\n"
     },
     {
-      "id": "1f8b2c1e39ddd97d",
-      "x": -1010,
-      "y": 2510,
-      "width": 1920,
-      "height": 340,
+      "id": "314f0869e8915120",
+      "x": -660,
+      "y": 1500,
+      "width": 1280,
+      "height": 200,
       "type": "text",
       "text": "## 🔬 Explore — rheolite\n\nNotebooks, the browser fit app, and the interactive model explorers.\n\n🌊 [Fit app](https://rheopy.github.io/rheofit/) — upload data or pick a rheodata\ndataset, choose a model, fit in the browser · 📓 [rheolite](https://github.com/rheopy/rheolite)"
     },
     {
-      "id": "d1ab14a5736b8a59",
-      "x": -1010,
-      "y": 2920,
-      "width": 920,
-      "height": 120,
+      "id": "9e8dbf1d41573904",
+      "x": -660,
+      "y": 1740,
+      "width": 600,
+      "height": 100,
       "type": "text",
       "text": "[← back to the rheopy ecosystem](https://rheopy.github.io/canvas/)"
     },
     {
-      "id": "767a5b02828f8ae8",
-      "x": -1110,
+      "id": "153188446d49dcd6",
+      "x": -760,
       "y": -120,
-      "width": 2120,
-      "height": 3230,
+      "width": 1440,
+      "height": 2080,
       "type": "group",
       "label": "using rheopy",
       "color": "6"
@@ -85,63 +85,63 @@
   ],
   "edges": [
     {
-      "id": "850667379884ab6b",
-      "fromNode": "05b52fe8c75a43a4",
+      "id": "b3879116873b324e",
+      "fromNode": "fb1f784544e935c0",
       "fromSide": "bottom",
-      "toNode": "9063add9b811e3c2",
+      "toNode": "a3a56658b42bfc5d",
       "toSide": "top"
     },
     {
-      "id": "0342f0a7ced7838b",
-      "fromNode": "9063add9b811e3c2",
+      "id": "7f97925da773f7f3",
+      "fromNode": "a3a56658b42bfc5d",
       "fromSide": "bottom",
-      "toNode": "9725a3ec52f7407f",
+      "toNode": "96810f5c73c339b7",
       "toSide": "top",
       "label": "data path"
     },
     {
-      "id": "b6841230fdd7a104",
-      "fromNode": "9063add9b811e3c2",
+      "id": "59ddf8fd702fd67f",
+      "fromNode": "a3a56658b42bfc5d",
       "fromSide": "bottom",
-      "toNode": "b3cf3081020aa8d8",
+      "toNode": "f2ff0fcea69f57a8",
       "toSide": "top",
       "label": "model path"
     },
     {
-      "id": "999e185b8cd5dc45",
-      "fromNode": "9725a3ec52f7407f",
+      "id": "9e03df5ef6865d07",
+      "fromNode": "96810f5c73c339b7",
       "fromSide": "bottom",
-      "toNode": "c83f484b9bf0bb71",
+      "toNode": "a8c7d92ace6a54c6",
       "toSide": "top"
     },
     {
-      "id": "991b47daac6ff001",
-      "fromNode": "c83f484b9bf0bb71",
+      "id": "020a34f04051c9b3",
+      "fromNode": "a8c7d92ace6a54c6",
       "fromSide": "bottom",
-      "toNode": "d43c5a19de8566b9",
+      "toNode": "06a559b79feb43c4",
       "toSide": "top",
       "label": "data in"
     },
     {
-      "id": "f6d48f7a65a6bc39",
-      "fromNode": "b3cf3081020aa8d8",
+      "id": "470f43f93720f6b1",
+      "fromNode": "f2ff0fcea69f57a8",
       "fromSide": "bottom",
-      "toNode": "d43c5a19de8566b9",
+      "toNode": "06a559b79feb43c4",
       "toSide": "top",
       "label": "model in"
     },
     {
-      "id": "26e5d4d82e755c8b",
-      "fromNode": "d43c5a19de8566b9",
+      "id": "43e63f11948155f9",
+      "fromNode": "06a559b79feb43c4",
       "fromSide": "bottom",
-      "toNode": "1f8b2c1e39ddd97d",
+      "toNode": "314f0869e8915120",
       "toSide": "top"
     },
     {
-      "id": "08e118c38e7db766",
-      "fromNode": "1f8b2c1e39ddd97d",
+      "id": "15dd9dc1616a7916",
+      "fromNode": "314f0869e8915120",
       "fromSide": "bottom",
-      "toNode": "d1ab14a5736b8a59",
+      "toNode": "9e8dbf1d41573904",
       "toSide": "top"
     }
   ]
