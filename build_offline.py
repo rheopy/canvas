@@ -2,11 +2,15 @@
 """Build a single-file offline viewer for a .canvas file.
 
 The offline file embeds the EXACT same viewer JavaScript the online site uses
-(viewer/chimp.js, byte-identical), so online and offline render identically --
-no separate viewer codebase to drift out of sync. The canvas JSON,
-markdown-referenced images, and the video attachment are inlined as well, so
-the output needs no network at all: open it from disk, from SharePoint, or
-anywhere a browser runs.
+(viewer/chimp.js -- only its trailing `export{...}` is rewritten to const
+assignments), so online and offline render identically -- no separate viewer
+codebase to drift out of sync. Because the viewer is a plain static inline
+script (no blob URLs, no dynamic imports, no fetches), the file also runs
+inside sandboxed previews such as Microsoft Teams, which block those.
+
+The canvas JSON, markdown-referenced images, and the video attachment are
+inlined as well, so the output needs no network at all: open it from disk,
+from SharePoint, or anywhere a browser runs.
 
 Usage:
     python3 build_offline.py using-rheopy.canvas [-o using-rheopy-offline.html]
@@ -129,15 +133,14 @@ TEMPLATE = """<!DOCTYPE html>
   </div>
 </div>
 <div id="viewer"></div>
-<script id="chimp-src" type="text/plain">{chimp}</script>
 <script id="canvas-json" type="application/json">{canvas}</script>
 <script type="module">
-// The viewer below is byte-identical to the online site's viewer/chimp.js,
-// loaded from the embedded copy above: same code, same experience, no network.
-const chimpSrc = document.getElementById('chimp-src').textContent;
-const chimp = await import(URL.createObjectURL(
-  new Blob([chimpSrc], {{ type: 'text/javascript' }})));
-const {{ JSONCanvasViewer, parser, Minimap, Controls }} = chimp;
+// The viewer below is the online site's viewer/chimp.js, inlined verbatim
+// (only its trailing `export{{...}}` is rewritten to const assignments, so the
+// page can use the names directly). Same code, same experience -- and because
+// it is a plain static script, it also runs inside sandboxed previews
+// (e.g. Microsoft Teams) that block blob-URL / dynamic module fetches.
+{viewer_js}
 const canvasData = JSON.parse(document.getElementById('canvas-json').textContent);
 
 const viewer = new JSONCanvasViewer(
@@ -210,6 +213,24 @@ def main() -> int:
     chimp = CHIMP.read_text(encoding="utf-8")
     assert "</script" not in chimp, "chimp.js contains </script -- cannot inline safely"
     assert "<script" not in chimp, "chimp.js contains <script -- cannot inline safely"
+    # Inline the viewer as a plain static module script: rewrite the trailing
+    # `export{A as B, ...}` into const assignments so the page code below can
+    # use the exported names directly. No blob URLs, no dynamic import --
+    # this is what makes it work in sandboxed iframes (Teams preview).
+    m = re.search(r"export\{([^{}]*)\}\s*;?\s*$", chimp)
+    assert m, "export statement not found at end of chimp.js"
+    assigns = []
+    for part in m.group(1).split(","):
+        part = part.strip()
+        if " as " in part:
+            local, exported = [s.strip() for s in part.split(" as ")]
+        else:
+            local = exported = part
+        assigns.append(f"const {exported} = {local};")
+    viewer_js = chimp[:m.start()] + "\n" + "\n".join(assigns) + "\n"
+    exported_names = [a.split("=")[0].replace("const", "").strip() for a in assigns]
+    for needed in ("JSONCanvasViewer", "parser", "Minimap", "Controls"):
+        assert needed in exported_names, f"{needed} not exported by chimp.js"
 
     data = json.loads(canvas_path.read_text(encoding="utf-8"))
     inlined = inline_images(data, canvas_path.parent)
@@ -229,7 +250,7 @@ def main() -> int:
 
     page = TEMPLATE.format(
         title=esc(title), sub=esc(sub), name=name,
-        chimp=chimp, canvas=payload, video=video,
+        viewer_js=viewer_js, canvas=payload, video=video,
     )
     out.write_text(page, encoding="utf-8")
 
